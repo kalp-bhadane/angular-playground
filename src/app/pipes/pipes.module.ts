@@ -1,12 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
+import { NgModule } from "@angular/core";
+import { PipesComponent } from "./pipes.component";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+    declarations: [ PipesComponent],
+    imports: [
+        CommonModule
+    ]
 })
-export class PipesModule { }
+export class PipesModule {}
