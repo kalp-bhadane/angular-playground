@@ -1,4 +1,4 @@
-<button class="btn btn-primary" (click)="addDateFormatRow()">Check More</button>
+<button class="btn btn-primary" (click)="addDateFormatRow()">Add</button>
 <div class="row date-row" *ngFor="let dateFormat of dateFormatArr">
   <div class="col-3">
     <app-single-select-dropdown [content]="dateFormat.sourceDateFormatDrpdwn"></app-single-select-dropdown>
