@@ -1,0 +1,11 @@
+
+<select class="form-select" 
+    [style.width]="content.width+'px'"
+    [style.height]="content.height+'px'">
+
+    <option *ngFor="let item of content.dataSource" 
+        [value]="item.value"
+        [selected]="item.value === content.selectedValue"
+        (click)="selectItem(item)">{{item.label}}</option>
+
+</select>

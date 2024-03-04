@@ -1,0 +1,15 @@
+<button class="btn btn-primary" (click)="addDateFormatRow()">Check More</button>
+<div class="row date-row" *ngFor="let dateFormat of dateFormatArr">
+  <div class="col-3">
+    <app-single-select-dropdown [content]="dateFormat.sourceDateFormatDrpdwn"></app-single-select-dropdown>
+  </div>
+  <div class="col-2"><input type="text" [(ngModel)]="dateFormat.givenDate"></div>
+  <div class="col-3">
+    <app-single-select-dropdown [content]="dateFormat.destinateDateFormatDrpdwn"></app-single-select-dropdown>
+  </div>
+  <div class="col-1"> <button class="btn btn-primary" (click)="dateFormat.showFormatedDate = true">Format</button>
+  </div>
+  <div class="col-1"></div>
+  <div class="col-2" *ngIf="dateFormat.showFormatedDate">{{ dateFormat.givenDate | dateFormat:
+    dateFormat.sourceDateFormatDrpdwn.selectedValue}}</div>
+</div>

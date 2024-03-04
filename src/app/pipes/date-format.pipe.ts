@@ -3,14 +3,18 @@ import * as moment from "moment";
 
 @Pipe({
     pure: true,
-    name: 'DateFormat'
+    name: 'dateFormat'
 })
 export class DateFormatPipe implements PipeTransform {
     transform(value: any, sourceFormat: string, destinationFormat: string = 'DD-MM-YYYY') {
         try {
             let newDate: any = '';
             if (!!value) {
-                newDate = moment(value, sourceFormat).format(destinationFormat);
+                if(sourceFormat) {
+                    newDate = moment(value, sourceFormat).format(destinationFormat);
+                } else {
+                    newDate = moment(value).format(destinationFormat);
+                }
             }
 
             if (!value || newDate === 'Invalid Date') {
