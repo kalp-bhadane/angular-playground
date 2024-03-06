@@ -7,8 +7,9 @@
   <div class="col-3">
     <app-single-select-dropdown [content]="dateFormat.destinateDateFormatDrpdwn"></app-single-select-dropdown>
   </div>
-  <div class="col-1"> <button class="btn btn-primary" (click)="dateFormat.showFormatedDate = true">Format</button>
+  <div class="col-1"> 
+    <!-- <button class="btn btn-primary" (click)="dateFormat.showFormatedDate = true">Format</button> -->
   </div>
-  <div class="col-2" *ngIf="dateFormat.showFormatedDate">
+  <div class="col-2" *ngIf="dateFormat.destinateDateFormatDrpdwn?.selectedValue?.length === dateFormat.givenDate?.length">
     {{ dateFormat.givenDate | dateFormat: dateFormat.sourceDateFormatDrpdwn.selectedValue : dateFormat.destinateDateFormatDrpdwn.selectedValue}}</div>
 </div>

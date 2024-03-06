@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class SingleSelectDropdownComponent implements OnInit {
   @Input() content!: {
+    id: string,
     dataSource: {label: string, value: any}[],
     selectedValue?: any,
     width?: number,
@@ -21,7 +22,7 @@ export class SingleSelectDropdownComponent implements OnInit {
   constructor() { }
 
   selectItem(item: any) {
-    this.content.selectedValue = item;
+    this.content.selectedValue = item.value;
     this.onSelection.emit(item);
   }
 
