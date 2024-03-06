@@ -1,29 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { DateFormatPipe } from './date-format.pipe';
 
 @Component({
   selector: 'app-pipes',
   templateUrl: './pipes.component.html',
-  styleUrls: ['./pipes.component.css']
+  styleUrls: ['./pipes.component.css'],
+  providers: [DateFormatPipe]
 })
 export class PipesComponent implements OnInit {
   givenDate: string = '';
   showFormatedDate = false;
   dateFormatArr: any = [];
 
-  constructor() { }
+  constructor(private dateFormatPipe: DateFormatPipe) { }
 
   ngOnInit(): void {
     this.addDateFormatRow();
-    this.addDateFormatRow();
-    this.addDateFormatRow();
-    this.addDateFormatRow();
+    // this.addDateFormatRow();
+    // this.addDateFormatRow();
+    // this.addDateFormatRow();
   }
 
   addDateFormatRow() {
     const dateFormat = {
       sourceDateFormatDrpdwn: this.getDrpdwnContent('sourceDateFormatDrpdwn_'+this.dateFormatArr.length+1),
       destinateDateFormatDrpdwn: this.getDrpdwnContent('destinateDateFormatDrpdwn'+this.dateFormatArr.length+1),
-      givenDate: '',
+      givenDate: new Date(),
       showFormatedDate: false,
       id: this.dateFormatArr.length + 1
     }
@@ -42,5 +44,9 @@ export class PipesComponent implements OnInit {
       height: 40,
       id: id
     }
+  }
+
+  onDateChange(event: any, dateFormatObj: any) {
+    dateFormatObj.givenDate = this.dateFormatPipe.transform(event, 'yyyy-MM-dd', dateFormatObj.destinateDateFormatDrpdwn.selectedValue)
   }
 }

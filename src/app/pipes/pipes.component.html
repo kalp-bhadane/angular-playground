@@ -3,13 +3,16 @@
   <div class="col-3">
     <app-single-select-dropdown [content]="dateFormat.sourceDateFormatDrpdwn"></app-single-select-dropdown>
   </div>
-  <div class="col-2 d-flex"><input type="text" [(ngModel)]="dateFormat.givenDate"></div>
+  <div class="col-2 d-flex">
+    <input type="date" (ngModelChange)="onDateChange($event, dateFormat)"
+      [ngModel]="dateFormat.givenDate | date:'yyyy-MM-dd' : dateFormat.destinateDateFormatDrpdwn.selectedValue" ></div>
   <div class="col-3">
     <app-single-select-dropdown [content]="dateFormat.destinateDateFormatDrpdwn"></app-single-select-dropdown>
   </div>
   <div class="col-1"> 
     <!-- <button class="btn btn-primary" (click)="dateFormat.showFormatedDate = true">Format</button> -->
   </div>
-  <div class="col-2" *ngIf="dateFormat.destinateDateFormatDrpdwn?.selectedValue?.length === dateFormat.givenDate?.length">
+  <!-- *ngIf="dateFormat.destinateDateFormatDrpdwn?.selectedValue?.length === dateFormat.givenDate?.length" -->
+  <div class="col-2">
     {{ dateFormat.givenDate | dateFormat: dateFormat.sourceDateFormatDrpdwn.selectedValue : dateFormat.destinateDateFormatDrpdwn.selectedValue}}</div>
 </div>
