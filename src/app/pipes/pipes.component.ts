@@ -37,6 +37,7 @@ export class PipesComponent implements OnInit {
         { label: 'MM-DD-YYYY', value: 'MM-DD-YYYY' },
         { label: 'YYYY-MM-DD', value: 'YYYY-MM-DD' }
       ],
+      selectedValue: 'DD-MM-YYYY',
       width: 300,
       height: 40,
       id: id
