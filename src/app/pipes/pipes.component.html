@@ -1,7 +1,7 @@
 <button class="btn btn-primary" (click)="addDateFormatRow()">Add</button>
 <div class="row date-row" *ngFor="let dateFormat of dateFormatArr">
   <div class="col-3">
-    <app-single-select-dropdown [content]="dateFormat.sourceDateFormatDrpdwn"></app-single-select-dropdown>
+    <!-- <app-single-select-dropdown [content]="dateFormat.sourceDateFormatDrpdwn"></app-single-select-dropdown> -->
   </div>
   <div class="col-2 d-flex">
     <input type="date" (ngModelChange)="onDateChange($event, dateFormat)"
@@ -14,5 +14,5 @@
   </div>
   <!-- *ngIf="dateFormat.destinateDateFormatDrpdwn?.selectedValue?.length === dateFormat.givenDate?.length" -->
   <div class="col-2">
-    {{ dateFormat.givenDate | dateFormat: dateFormat.sourceDateFormatDrpdwn.selectedValue : dateFormat.destinateDateFormatDrpdwn.selectedValue}}</div>
+    {{ dateFormat.givenDate | dateFormat: 'YYYY-MM-DD' : dateFormat.destinateDateFormatDrpdwn.selectedValue}}</div>
 </div>
