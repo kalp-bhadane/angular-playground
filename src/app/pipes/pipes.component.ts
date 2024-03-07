@@ -47,6 +47,7 @@ export class PipesComponent implements OnInit {
   }
 
   onDateChange(event: any, dateFormatObj: any) {
-    dateFormatObj.givenDate = this.dateFormatPipe.transform(event, 'yyyy-MM-dd', dateFormatObj.destinateDateFormatDrpdwn.selectedValue)
+    console.log(event, dateFormatObj);    
+    dateFormatObj.givenDate = this.dateFormatPipe.transform(event, 'YYYY-MM-DD', dateFormatObj.destinateDateFormatDrpdwn.selectedValue)
   }
 }
