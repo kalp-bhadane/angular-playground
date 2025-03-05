@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { DateFormatPipe } from './pipes/date-format.pipe';
 import { SharedModule } from './shared/shared.module';
+import { ChangeDetectionStrategyComponent } from './change-detection-strategy/change-detection-strategy.component';
+import { ChangeDetectChildComponent } from './change-detection-strategy/change-detect-child/change-detect-child.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { SharedModule } from './shared/shared.module';
     PipesComponent,
     HomeComponent,
 
-    DateFormatPipe
+    DateFormatPipe,
+      ChangeDetectionStrategyComponent,
+      ChangeDetectChildComponent
   ],
   imports: [
     BrowserModule,
