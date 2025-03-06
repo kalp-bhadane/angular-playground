@@ -10,6 +10,7 @@ import { DateFormatPipe } from './pipes/date-format.pipe';
 import { SharedModule } from './shared/shared.module';
 import { ChangeDetectionStrategyComponent } from './change-detection-strategy/change-detection-strategy.component';
 import { ChangeDetectChildComponent } from './change-detection-strategy/change-detect-child/change-detect-child.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ChangeDetectChildComponent } from './change-detection-strategy/change-d
 
     DateFormatPipe,
       ChangeDetectionStrategyComponent,
-      ChangeDetectChildComponent
+      ChangeDetectChildComponent,
+      MenuComponent
   ],
   imports: [
     BrowserModule,

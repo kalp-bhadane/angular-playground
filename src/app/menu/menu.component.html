@@ -1,0 +1,31 @@
+<ul class="nav nav-pills">
+  <div *ngIf="true">
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/pipes" routerLinkActive="active"
+        >Pipes</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/change-detection"
+        routerLinkActive="active"
+        >Change Detection</a
+      >
+    </li>
+  </div>
+</ul>
+<!-- <ul>
+  <li><a routerLink="/">Home</a></li>
+  <li><a routerLink="/pipes">Pipes</a></li>
+  <li><a routerLink="/change-detection">Change Detection</a></li>
+</ul> -->

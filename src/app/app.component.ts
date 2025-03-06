@@ -1,24 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  isAuthenticated = true;
-  constructor(
-    // private authService: AuthService
-    ) {}
+export class AppComponent implements OnInit, OnDestroy {
+  count = 1;
+  constructor(private appService: AppService) {}
 
-  ngOnInit() {
-    // this.authService.userSub.subscribe((user) => {
-    //   this.isAuthenticated = user ? true : false;
-    // });
-  }
-
-  onLogout(event: Event) {
-    event.preventDefault();
-    // this.authService.logout();
-  }
+  ngOnInit() {}
+  ngOnDestroy(): void {}
 }
