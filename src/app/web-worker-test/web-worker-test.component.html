@@ -1,0 +1,8 @@
+<h1>Prime Numbers</h1>
+    <input type="number" [(ngModel)]="limit" placeholder="Enter max number" />
+    <button (click)="calculatePrimes()">Calculate</button>
+
+    <div *ngIf="primes.length">
+      <h3>Primes up to {{ limit }}:</h3>
+      <p>{{ primes.join(', ') }}</p>
+    </div>
