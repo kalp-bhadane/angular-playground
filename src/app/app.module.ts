@@ -12,6 +12,7 @@ import { ChangeDetectionStrategyComponent } from './change-detection-strategy/ch
 import { ChangeDetectChildComponent } from './change-detection-strategy/change-detect-child/change-detect-child.component';
 import { MenuComponent } from './menu/menu.component';
 import { WebWorkerTestComponent } from './web-worker-test/web-worker-test.component';
+import { DomSanitizerComponent } from './dom-sanitizer/dom-sanitizer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { WebWorkerTestComponent } from './web-worker-test/web-worker-test.compon
       ChangeDetectionStrategyComponent,
       ChangeDetectChildComponent,
       MenuComponent,
-      WebWorkerTestComponent
+      WebWorkerTestComponent,
+      DomSanitizerComponent
   ],
   imports: [
     BrowserModule,
